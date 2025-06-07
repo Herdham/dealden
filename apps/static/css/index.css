@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F9FAFB;
+}
+
+#errors{
+    background-color: red;
+    padding: 8px;
+    color: #D1D5DB;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #F9FAFB;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.25);
+    padding: 10px;
+    width: 350px;
+    height: auto;
+}
+
+.container h2{
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: #3B82F6;
+}
+
+.container h4{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 5px;
+    color: #1F2937;
+}
+
+
+.container form input[type="text"], input[type="password"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #D1D5DB;
+    outline: none;
+    border-radius: 5px;
+    background-color: #f3f4f6;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container form textarea{
+    width: 100%;
+    height: 70px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f4f6;
+    border: 1px solid #D1D5DB;
+    outline: none;
+    border-radius: 5px;
+}
+
+.container form input[type="file"]{
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+.container form input[type="submit"]{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: #3B82F6;
+    color: #f3f4f6;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container form input::placeholder{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.container form p{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+.container form p a{
+    text-decoration: none;
+    color: #3B82F6;
+}
+
+.container .checkpassword{
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+}
+
+.container .checkpassword label{
+    margin-right: 4px;
+}
+
+.container form select{
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+}
+
+@media(max-width: 400px){
+    .container{
+        width: 295px;
+    }
+}

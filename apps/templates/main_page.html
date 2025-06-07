@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="{% static 'css/main_page.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>DealDen</title>
+{% endblock %}
+
+{% block content %}
+    <div class="main_page">
+        <nav>
+            <div class="first">
+                <ion-icon name="menu-outline"></ion-icon>
+                <h2>DealDen</h2>
+            </div>
+            <div class="second">
+                <div class="search">
+                    <form action="" method="post">
+                            <button type="button"><ion-icon name="list-outline"></ion-icon></button>
+                            <input type="text" placeholder="Search here" name="search">
+                            <button type="submit" id="search"><ion-icon name="search-outline"></ion-icon></button>
+                        </form>
+                </div>
+            </div>
+            <div class="third">
+                <a href="/" id="login">Login</a>
+                <a href="/register" id="register">Register</a>
+            </div>
+        </nav>
+        <div class="sidebar">
+            <aside>
+                <ul>
+                    <li><ion-icon name="list-outline"></ion-icon><a href="#">Category</a></li>
+                    <li><ion-icon name="bag-outline"></ion-icon><a href="#">Products</a></li>
+                    <li><ion-icon name="cube-outline"></ion-icon><a href="#">Orders</a></li>
+                    <li><ion-icon name="cart-outline"></ion-icon><a href="#">Cart</a></li>
+                    <li><ion-icon name="person-circle-outline"></ion-icon><a href="#">Profile</a></li>
+                    <li><ion-icon name="chatbubble-ellipses-outline"></ion-icon><a href="#">Message</a></li>
+                    <li id="logout"><ion-icon name="log-in-outline"></ion-icon><a href="/">Login</a></li>
+                </ul>
+            </aside>
+        </div>
+        <main>
+            <div class="product_container">
+                <h3>All Products</h3>
+                <div class="products">
+                {% for product in products %}
+                    <div class="products_inner">
+                        <img src="{{ product.image.url }}" alt="">
+                        <hr>
+                        <h4>{{product.name}}</h4>
+                        <p><span>$</span>{{product.price}}</p>
+                        <p>In Stock: {{product.stock}}</p>
+                        <div class="purchase">
+                            <button type="button" class="buynow"><a href="#">Buy Now</a></button>
+                            <button type="button" class="cart"><a href="#"><ion-icon name="cart-outline"></ion-icon></a></button>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </main>
+        <footer></footer>
+    </div>
+{% endblock %}
